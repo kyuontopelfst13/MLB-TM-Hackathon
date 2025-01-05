@@ -4,7 +4,7 @@ function Header(){
     return(
         <header>
             <h1>My Website</h1>
-            <nav class= {styles.navbar}>
+            <nav className= {styles.navbar}>
                 <ul>
                     <li><a href = "#">Home</a></li>
                     <li><a href = "#">About</a></li>
@@ -12,6 +12,7 @@ function Header(){
                     <li><a href = "#">Contact</a></li>
 
                 </ul>
+                
             </nav>
             <hr></hr>
         </header>
