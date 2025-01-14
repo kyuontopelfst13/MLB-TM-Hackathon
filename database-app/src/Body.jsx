@@ -1,55 +1,49 @@
 import React, {useState} from 'react';
 import ReactPlayer from 'react-player';
+import axios from 'axios';
 function Body(){
     
-    const [url,seturl]=useState("");
+    const [urls,seturl]=useState([]);
     const [list,setlist] =useState([]);
     const [show,setshow]= useState(false);
     const[showvideo,setshowvideo]= useState(false);
-    function handleInputChange(event){
-          seturl(event.target.value);
-    }
-    function analyse_url(event){
-        //keep previous result and prevent refresh.
-        event.preventDefault();
 
-        const entry = {url}
-        if(url){
-        setlist((ls)=>[...ls,entry])
-        seturl("")
-        setshow(true)
-        setshowvideo(true)
-        }
+    function handleInput(event){
+         seturl([event.target.value]);
+    }
+    function handleSubmit(){
+        const newurl =document.getElementById("link").value;
+        document.getElementById("link").value ="";
+        seturl(u=>[...u,newurl]);
+        
+        
+        
+        
+    }
+
+    function geturl(){
+        axios.get('http://localhost:5173').then()
     }
     return(
        <div>
 
-        <h2>Extracts fundamental Statcast metrics </h2>
+        <h1>Extracts fundamental Statcast metrics </h1>
+        
         <div>
-        <form onSubmit={ analyse_url}>
-            <input 
-            name= "url" 
+        
+        <input 
+            type ="text"
+            id="link" 
             placeholder = "Please enter a video link..."
-            value= {url}
-            onChange ={handleInputChange}/>
-        <button className= "analyse-button">
-        Analyse
-        </button>
-        </form>
+            />
+        <button onClick={handleSubmit}  >Analyse </button>
+        <ul>
+            { 
+              urls.map((url,index)=> <li key ={index}>{url} </li>)
+        }</ul>
         </div>
-        {show?<h2>Your have typed a video link :</h2> :null}
-        {
-              list.map(
-                (a)=>
-                <div>
-                    <a href={a.url}>{a.url}</a>
-                </div>    
-            )
-        }
-        <div>
-        ##### need to fix the problem of video not showing. 
-        {showvideo?<video src={url}/> : null}
-        </div>
+        
+    
        </div>
     );
 }
