@@ -2,26 +2,22 @@ import styles from './Header.module.css'
 function Header(){
 
     return(
-        <header>
-           <h1 className={styles.head1}>
+        <header className={styles.header}>
+           <a href="/" className={styles.logo}>
             <span>
-            <span  style={{ color: 'red' }}> M</span>
-            <span  style={{ color: 'white' }}>L</span>
-            <span  style={{ color: 'blue' }}>B</span>
-            <span  style={{ color: 'black' }}> VisionBase</span>
+                <span  style={{ color: 'red' }}> M</span>
+                <span  style={{ color: 'white' }}>L</span>
+                <span  style={{ color: 'blue' }}>B</span>
+                <span  style={{ color: 'black' }}> VisionBase</span>
             </span>
-            </h1>
+           </a>
             <nav className= {styles.navbar}>
-                <ul>
-                    <li><a href = "#">Home</a></li>
-                    <li><a href = "#">About</a></li>
-                    <li><a href = "#">Service</a></li>
-                    <li><a href = "#">Contact</a></li>
-
-                </ul>
                 
+                    <a href = "/">Home</a>
+                    <a href = "/">About</a>
+                    <a href = "/">Service</a>
+                    <a href = "/">Contact</a>   
             </nav>
-            <hr></hr>
         </header>
 
     );

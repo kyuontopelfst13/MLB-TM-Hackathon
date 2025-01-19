@@ -5,8 +5,17 @@
     margin: 0;
     box-sizing :border-box;
     font-family: Outfit;
+    
 }
 #root{
     min-height: 100vh;
     /*display: flex;*/
 }
+body {
+    padding-top: 60px;
+  }
+  @media (max-width: 980px) {
+    body {
+      padding-top: 0px;
+    }
+  }

@@ -6,7 +6,7 @@ function Main(){
 
    <div className="main">
       <div className="nav">
-         <p>VisionBase</p>
+         
       </div>
       <div className="mainContainer">
          <div className="greetmessage">
