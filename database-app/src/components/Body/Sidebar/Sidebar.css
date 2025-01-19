@@ -16,6 +16,12 @@
     margin-left: 10px;
     cursor: pointer;
 }
+.sidebar .menu:hover{
+    display: block;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
 .sidebar .Newchat{
     margin-top: 50px;
     display: inline-flex;

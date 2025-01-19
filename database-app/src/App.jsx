@@ -1,6 +1,6 @@
-import Header from './Navbar/Header.jsx'
-import Footer from './Footer.jsx'
-import Body from './Body.jsx'
+import Header from './components/Navbar/Header.jsx'
+import Footer from './components/Footer/Footer.jsx'
+import Body from './components/Body/Body.jsx'
 
 function App() {
   return(
