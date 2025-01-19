@@ -3,6 +3,7 @@ import menu_logo from './menu_logo.png'
 import plus_logo from './plus_logo.png'
 import send_logo from './send_logo.png'
 import message_logo from './message_logo.png'
+import settings_logo from './settings_logo.png'
 
 
 export const assets ={
@@ -10,5 +11,6 @@ export const assets ={
     menu_logo,
     plus_logo,
     send_logo,
-    message_logo
+    message_logo,
+    settings_logo
 }

@@ -5,6 +5,7 @@
     padding: 0px;
     margin: 0px;
     overflow: hidden;
+    
 }
 .navbar a{
     color:white;
@@ -19,4 +20,8 @@
 }
 .navbar li{
     float:left;
+    
+}
+.head1{
+    background-color:lightgray;
 }
