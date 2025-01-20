@@ -10,8 +10,10 @@ function Contextprovider(props){
     const [showRes,setShowRes] =useState(false);
     const [load,setload] =useState(false);
     const [resultdata,setresultdata] =useState("");
+
+
     async function onSent(prompt) {
-       await run(prompt)
+       await run(input)
     }
     const contextValue ={
           prevPrompts,

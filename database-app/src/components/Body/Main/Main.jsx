@@ -19,9 +19,9 @@ function Main(){
          </div>
          <div className="mainBottom">
             <div className="searchbox">
-               <input type="text" placeholder="Enter a video link here... ^v^" />
+               <input onChange={(e)=>setInput(e.target.value)} value={input} type="text" placeholder="Enter a video link here... ^v^" />
                <div>
-                  <img src={assets.send_logo} alt="" />
+                  <img onClick={onSent}src={assets.send_logo} alt="" />
                </div>
             </div>
             <p className="bottomInfo">
