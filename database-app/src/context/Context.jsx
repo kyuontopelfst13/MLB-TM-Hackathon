@@ -20,9 +20,22 @@ function Contextprovider(props){
         setresultdata("");
         setload(true);
         setShowRes(true);
-        setRecentPrompt(input)
-        setPrevPrompts(prev=>[...prev,input])
-        const response = await run(input)
+        let response ;
+        if(prompt !== undefined){
+            response =await run(prompt)
+            setRecentPrompt(prompt)
+            
+        }
+        else{
+            
+            setRecentPrompt(input)
+            setPrevPrompts(prev=>[...prev,input])
+            response = await run(input)
+
+           
+            
+        }
+      
         let resArray = response.split("**");
         let newRes ="";
         for(let i=0; i< resArray.length; i++){
