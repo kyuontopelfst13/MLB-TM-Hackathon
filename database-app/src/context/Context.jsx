@@ -31,8 +31,6 @@ function Contextprovider(props){
             setRecentPrompt(input)
             setPrevPrompts(prev=>[...prev,input])
             response = await run(input)
-
-           
             
         }
       
