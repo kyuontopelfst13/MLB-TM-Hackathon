@@ -1,4 +1,4 @@
-const {VertexAI} = require('@google-cloud/vertexai');
+import VertexAI from '@google-cloud/vertexai';
 
 /**
  * TODO(developer): Update these variables before running the sample.
@@ -17,4 +17,4 @@ async function generate_from_text_input(projectId = 'mlb-visionbase') {
   const contentResponse = await resp.response;
   console.log(JSON.stringify(contentResponse));
 }
-generate_from_text_input();
+export default generate_from_text_input;

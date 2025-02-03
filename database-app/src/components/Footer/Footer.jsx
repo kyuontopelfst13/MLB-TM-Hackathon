@@ -2,7 +2,7 @@
 function Footer(){
      return(
         <footer>
-            <p>&copy; {new Date().getFullYear()} Your Website  name</p>
+            <p>&copy; {new Date().getFullYear()} MLB VisionBase</p>
         </footer>
      );
 }

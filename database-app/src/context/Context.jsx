@@ -16,23 +16,25 @@ function Contextprovider(props){
             setresultdata(prev=>prev+nextWord)
         },75*index)
     }
+    function newSearch(){
+        setload(false)
+        setShowRes(false)
+    }
     async function onSent(prompt) {
         setresultdata("");
         setload(true);
         setShowRes(true);
         let response ;
-        if(prompt !== undefined){
-            response =await run(prompt)
+        if (input === ""){
+            response = await run(prompt)
             setRecentPrompt(prompt)
-            
         }
         else{
             
-            setRecentPrompt(input)
-            setPrevPrompts(prev=>[...prev,input])
-            response = await run(input)
-            
-        }
+             setPrevPrompts(prev=>[...prev,input])
+             setRecentPrompt(input)
+             response = await run(input)}    
+        
       
         let resArray = response.split("**");
         let newRes ="";
@@ -66,6 +68,7 @@ function Contextprovider(props){
           resultdata,
           input,
           setInput,
+          newSearch
           
 
     }
