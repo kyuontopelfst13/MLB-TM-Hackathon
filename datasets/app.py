@@ -9,7 +9,7 @@ import os
 
 app = Flask(__name__)
 
-credentials= service_account.Credentials.from_service_account_file("E:/code/vocal-catalyst-449218-q8-b8fbf18bb0c3.json")
+credentials= service_account.Credentials.from_service_account_file("datasets/vocal-catalyst-449218-q8-b8fbf18bb0c3.json")
 
 # Configure Vertex AI (replace with your project and location)
 # vertexai.init(project="your-project-id", location="your-project-location")
