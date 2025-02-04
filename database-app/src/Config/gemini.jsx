@@ -32,7 +32,7 @@ import { VertexAI } from "@google-cloud/vertexai";
       history: [
       ],
     });*/
-    const vertexchatSession = vertexAimodel.generateContent({vertexgenerationConfig,history: [
+    const vertexchatSession = await vertexAimodel.generateContent({vertexgenerationConfig,history: [
     ],})
     console.log(prompt);
      // Initialize Vertex with your Cloud project and location
