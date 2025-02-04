@@ -2,11 +2,34 @@
 <html>
 <head>
     <title>Video Analysis</title>
+    <link rel="stylesheet" href="../static/style.css"/>
 </head>
 <body>
-    <h1>Video Analysis</h1>
+    <header class="Header">
+        <a href="/" class="logo">
+        <span>
+        <span class="M">M</span>
+        <span class="L">L</span>
+        <span class="B">B</span>
+        <span class="VBase">VisionBase</span>
+        </span>
+        </a>
+        
+       
+    </header>
+    <div class="mainContainer">
+         <div class="greetmessage">
+         <p><span>Provide a baseball video link to get statistics.</span></p>
+         </div>
+    </div>
+   
+
+    <div class="MainBody">
+        
+       
     <form method="POST" enctype="multipart/form-data"> <!-- Important for file uploads -->
-        Video URL: <input type="text" name="video_uri"><br>
+        Video URL : <input type="text" name="video_uri">
+        <br>
         <!-- OR<br>
         Upload Video: <input type="file" name="video_file" accept="video/mp4"><br> -->
         <!-- Text Prompt (optional):<br>
@@ -19,6 +42,7 @@
     {% if result %}
         <h2>Results:</h2>
         <pre>{{ result }}</pre>  <!-- Display results in a preformatted block -->
-    {% endif %}
+    {% endif %} 
+    </div>
 </body>
 </html>

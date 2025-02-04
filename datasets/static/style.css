@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing :border-box;
+    font-family: Outfit;
+    
+}
+body{
+    background-color: white;
+}
+
+pre {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	overflow: auto;
+	overflow-y: hidden;
+	font-size: 12px;
+	line-height: 20px;
+	background: #efefef;
+	border: 1px solid #777;
+	
+}
+span.M {
+    color: red;
+}
+span.L{
+    color:white;
+}
+span.B{
+    color: blue;
+}
+span.VBase{
+    color: black;
+}
+span{
+    background-color: transparent;
+}
+a.logo{
+    
+    background-color:transparent;
+    font-size:  35px ;
+    font-weight: 500;
+    text-decoration: none;
+    
+}
+header.Header{
+
+        position: fixed;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        background-color: lightgray;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+        padding: 10px 20px;
+        width:100%;
+        
+}
+nav.navbar a{
+    position: relative;
+    font-size: 20px;
+    color: #000a9d;
+    font-weight: 500;
+    margin-left: 40px;
+    text-decoration: none;
+}
+nav.navbar a:hover::before{
+    width:100%;
+
+}
+nav.navbar a::before{
+    content: '';
+    position: absolute;
+    top: 100%;
+    left:0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: .3s;
+}
+#root{
+    min-height: 100vh;
+    /*display: flex;*/
+    animation:fadeIn 2s;
+}
+body {
+    padding-top: 60px;
+  }
+@media (max-width: 980px) {
+    body {
+      padding-top: 0px;
+    }
+}
+@keyframes fadeIn {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+div.MainBody{
+    display: flex;
+    position:center;
+
+}
+form{
+    position: center;
+    padding: 20px;
+}
+form input{
+    font-size:20px ;
+}
+div.mainContainer{
+    max-width:900px ;
+    margin: auto;
+}
+div.greetmessage{
+    margin: 50px 0px;
+    font-size: 56px;
+    color: #c4c7c5;
+    font-weight: 500;
+    padding: 20px;
+
+
+}
+div.greetmessage span{
+    background: -webkit-linear-gradient(16deg,#4b90ff,#ff5546);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  
+}
