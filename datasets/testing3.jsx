@@ -2,7 +2,7 @@ const {VertexAI} = require('@google-cloud/vertexai');
 
 // Initialize Vertex with your Cloud project and location
 const vertex_ai = new VertexAI({project: 'mlb-visionbase', location: 'us-central1'});
-const model = 'gemini-1.5-pro-002';
+const model = 'gemini-1.5-flash-002';
 
 
 // Instantiate the models
@@ -34,31 +34,27 @@ const generativeModel = vertex_ai.preview.getGenerativeModel({
   ],
 });
 
-const text1 = {text: `Provide Pitch speed, Exit Velocity, Hit Distance and Launch Angle using Ball tracking. Provide data in Tabular format.`};
-
-async function run(prompt) {
-  
-  const video1 = {
+const video1 = {
   fileData: {
     mimeType: 'video/mp4',
-    fileUri: prompt
+    fileUri: `https://sporty-clips.mlb.com/dk1BZ1dfWGw0TUFRPT1fQUZkWVhWQlZCd0lBRDFVTFVnQUFBd1VEQUZoVVZWQUFVVkFHQndNTUF3cFNWZ3RV.mp4`
   }
 };
+
+async function generateContent() {
   const req = {
     contents: [
-      {role: 'user', parts: [video1, text1]}
+      {role: 'user', parts: [video1]}
     ],
   };
 
-  const response = await generativeModel.generateContent(req);
+  const streamingResp = await generativeModel.generateContentStream(req);
 
-    // Wait for the response to complete
-    const aggregatedResponse = await response.response;
-    // Select the text from the response
-    const fullTextResponse =
-      aggregatedResponse.candidates[0].content.parts[0].text;
-  
-    console.log(fullTextResponse);
+  for await (const item of streamingResp.stream) {
+    process.stdout.write('stream chunk: ' + JSON.stringify(item) + '\n');
+  }
+
+  process.stdout.write('aggregated response: ' + JSON.stringify(await streamingResp.response));
 }
 
-generateContent('https://sporty-clips.mlb.com/dk1BZ1dfWGw0TUFRPT1fQUZkWVhWQlZCd0lBRDFVTFVnQUFBd1VEQUZoVVZWQUFVVkFHQndNTUF3cFNWZ3RV.mp4');
+generateContent();
