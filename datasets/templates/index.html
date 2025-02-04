@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Analysis</title>
+</head>
+<body>
+    <h1>Video Analysis</h1>
+    <form method="POST" enctype="multipart/form-data"> <!-- Important for file uploads -->
+        Video URL: <input type="text" name="video_uri"><br>
+        <!-- OR<br>
+        Upload Video: <input type="file" name="video_file" accept="video/mp4"><br> -->
+        <!-- Text Prompt (optional):<br>
+        <textarea name="text_prompt" rows="4" cols="50"></textarea><br> <br> -->
+
+
+        <input type="submit" value="Process">
+    </form>
+
+    {% if result %}
+        <h2>Results:</h2>
+        <pre>{{ result }}</pre>  <!-- Display results in a preformatted block -->
+    {% endif %}
+</body>
+</html>
